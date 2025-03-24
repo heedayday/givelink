@@ -8,7 +8,6 @@ public class GivelinkApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GivelinkApplication.class, args);
-
 	}
 
 }
