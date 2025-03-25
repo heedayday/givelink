@@ -1,15 +1,26 @@
 package com.java.givelink.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+@Log4j2
 public class MainController {
+
+    private static final Logger logger = LogManager.getLogger(MainController.class);
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("name", "Givelink");
+        model.addAttribute("postInfo", "post_title");
+        logger.info("Givelink main method 사용중...DB 접근해서 데이터 가져와서 뿌려주기");
+
+
+
+
         return "index"; // templates/home.html 파일 보여줌
     }
 

@@ -7,29 +7,44 @@
         <h1 class="text-center">GiveLink</h1>
     </div>
 
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const path = window.location.pathname;
+
+            if (path === '/') {
+                document.getElementById('index')?.classList.add('active');
+            } else if (path.startsWith('/news')) {
+                document.getElementById('news')?.classList.add('active');
+            } else if (path.startsWith('/community')) {
+                document.getElementById('community')?.classList.add('active');
+            }
+        });
+    </script>
+
     <nav class="tm-nav" id="tm-nav">
         <ul>
-            <li class="tm-nav-item active"><a href="/" class="tm-nav-link">
+            <li class="tm-nav-item" id="index"><a href="/" class="tm-nav-link">
                 <i class="fas fa-pen"></i>
                 기술 블로그
             </a></li>
-            <li class="tm-nav-item"><a href="/post" class="tm-nav-link">
+            <li class="tm-nav-item" id="news"><a href="/news" class="tm-nav-link">
                 <i class="fas fa-pen"></i>
                 기술 뉴스
             </a></li>
-            <li class="tm-nav-item"><a href="/about" class="tm-nav-link">
+            <li class="tm-nav-item" id="community"><a href="/community" class="tm-nav-link">
                 <i class="fas fa-users"></i>
                 기술 커뮤니티
             </a></li>
-            <li class="tm-nav-item"><a href="/contact" class="tm-nav-link">
+<!--            <li class="tm-nav-item"><a href="/contact" class="tm-nav-link">
                 <i class="far fa-comments"></i>
                 기술 
-            </a></li>
+            </a></li>-->
         </ul>
     </nav>
 
     <p class="tm-mb-80 pr-5 text-white">
-        GiveLink는 게시물을 추천해주는 사이트입니다.
-        <br> 게시물을 추가로 원하는 경우 검색기능을 활용해보세요.
+        GiveLink는 게시물을 추천 사이트
+        <br> 더 많은 정보를 원하시는 경우
+        <br>검색기능을 활용해보세요.
     </p>
 </div>
