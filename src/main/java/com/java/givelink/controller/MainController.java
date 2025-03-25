@@ -13,22 +13,22 @@ public class MainController {
         return "index"; // templates/home.html 파일 보여줌
     }
 
-    @GetMapping("/post")
-    public String post(Model model) {
+    @GetMapping("/news")
+    public String news(Model model) {
         model.addAttribute("name", "Givelink");
-        return "post"; // templates/home.html 파일 보여줌
+        return "news"; // templates/post.html 파일 보여줌
     }
 
-    @GetMapping("/about")
-    public String about(Model model) {
+    @GetMapping("/community")
+    public String community(Model model) {
         model.addAttribute("name", "Givelink");
-        return "about"; // templates/home.html 파일 보여줌
+        return "community"; // templates/about.html 파일 보여줌
     }
 
-    @GetMapping("/contact")
+/*    @GetMapping("/contact")
     public String contact(Model model) {
         model.addAttribute("name", "Givelink");
-        return "contact"; // templates/home.html 파일 보여줌
-    }
+        return "contact"; // templates/contact.html 파일 보여줌
+    }*/
 
 }
