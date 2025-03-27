@@ -14,8 +14,8 @@ public interface PostRepository extends JpaRepository<Post, Long> {
             "p.post_id, p.post_title, p.post_content, " +
             "p.post_url) " +
             "FROM Post p " +
-            "LEFT JOIN p.img_id i " +
-            "LEFT JOIN p.category_id c")
+            " " +
+            "")
     List<PostDto> findAllWithJoin();
 
 }

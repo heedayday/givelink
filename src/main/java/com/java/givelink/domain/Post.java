@@ -15,8 +15,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int post_id;
 
-    private int img_id;
-    private int category_id;
+    //private int img_id;
+    //private int category_id;
 
     private String post_title;
     private String post_content;
