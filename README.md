@@ -1,5 +1,5 @@
 ## givelink
-- 링크 추천 api 활용 사이트(Spring Boot, Thymeleaf version)
+- 링크 추천 api 활용 사이트(Spring Boot, JPA, Thymeleaf)
 <br>- 검색 기능을 중심으로 한 링크 추천 사이트
 <br>- Spring Boot Framework & Thymeleaf & html & css & Bootstrap & JavaScript 구성
 <br>- Spring Initializr를 사용하여 프로젝트 생성(Maven, Spring Web, Lombok, Spring Data JPA, MySql, Thymeleaf)
