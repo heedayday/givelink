@@ -4,7 +4,8 @@
 <br>- Spring Boot Framework & Thymeleaf & html & css & Bootstrap & JavaScript 구성
 <br>- Spring Initializr를 사용하여 프로젝트 생성(Maven, Spring Web, Lombok, Spring Data JPA, MySql, Thymeleaf)
 <br>- JPA(Hibernate ORM 표준 활용)를 활용한 쿼리 실행
-<br>- Spring MVC 아키택처 기반으로 계층구조 설계 및 개발 (디자인 패턴 추가학습 및 적용)
+<br>- Spring MVC 아키택처 기반으로 계층구조 설계 및 개발 (디자인 패턴 추가 학습 및 적용)
+<br>- 프로젝트 진행시 추가학습하는 내용은 블로그에 정리하여 기록
 
 - 핵심기능
 <br>- 기본 게시물 DB 조회 기능을 활용한 게시물 추천 페이지
