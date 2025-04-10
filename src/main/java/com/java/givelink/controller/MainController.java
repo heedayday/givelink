@@ -31,8 +31,6 @@ public class MainController {
         log.info("lombok 로그 찍히나요?");
         List<PostDto> posts = mainService.getMainPostList();
         model.addAttribute("posts", posts);
-
-
         return "index"; // templates/home.html 파일 보여줌
     }
 
