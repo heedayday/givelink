@@ -37,6 +37,10 @@ public class MainController {
     @GetMapping("/news")
     public String news(Model model) {
         model.addAttribute("name", "Givelink");
+
+        //여기서도 데이터를 추가해줄 수는 있음
+
+
         return "news"; // templates/post.html 파일 보여줌
     }
 
