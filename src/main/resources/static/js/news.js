@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () { //vue 처리전에 html이 수행이 되는 지 속도가 안 맞아 추가함
     const app = new Vue({
         el: '#app',
@@ -13,7 +12,12 @@ document.addEventListener('DOMContentLoaded', function () { //vue 처리전에 h
             ],
             newTodo: '',
             todos: [],
-            inputChanged: false
+            inputChanged: false,
+            str:''
+        },
+        created (){
+
+
         },
         methods: {
             addTodo() {
@@ -24,13 +28,21 @@ document.addEventListener('DOMContentLoaded', function () { //vue 처리전에 h
             },
             toggleTodo(index) {
                 this.todos[index].done = !this.todos[index].done;
+            },
+            hello(){
+                return this.message='버튼이 눌렸습니다';
+                this.str = JSON.stringify(fruits);
             }
         },
-
         computed: {
             remainingCount() {
                 return this.todos.filter(todo => !todo.done).length;
-            }
+            },
+
+        },
+        mounted() {
+            console.log("확인");
+            console.log(this.str);
         },
         watch: {
             newTodo(newVal, oldVal) {
