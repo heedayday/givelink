@@ -32,6 +32,16 @@ document.addEventListener('DOMContentLoaded', function () { //vue 처리전에 h
             hello(){
                 return this.message='버튼이 눌렸습니다';
                 this.str = JSON.stringify(fruits);
+            },
+            choiceFruits(){
+                switch (this.fruits()){
+                    case '포도':
+                        console.log("포도");
+                    case '딸기':
+                        console.log("딸기");
+                    case '수박':
+                        console.log("수박");
+                }
             }
         },
         computed: {
