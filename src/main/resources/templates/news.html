@@ -13,8 +13,34 @@
 <body>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!--<script src="/resouces/static/js/news.js"></script>-->
+<script>
+   $('#testInfo').text('안녕');
+    let ArraySet = {
+        name:'은희',
+        age: 31,
+        email:"heecode"
+    }
 
+   $.ajax({
+       url: '/test/testData.ajax',
+       type: 'POST',
+       data : JSON.stringify(ArraySet),
+       contentType: 'application/json',
+       dataType : 'json',
+       success: function (result) {
+          // console.log("결과출력: "+result);
+           //console.log("data : : " + JSON.stringify(data));
+       },
+       error: function (data, status, err) {
+           console.error("에러 발생!");
+       },
+       complete: function () {
+       }
+   });
+
+</script>
 
 <header class="tm-header" id="tm-header">
     <div class="tm-header-wrapper">
@@ -44,9 +70,21 @@
                 <h1 v-if="vueDataVisible">Vue is awesome!</h1>
                 <button @click="hello">추가</button>
 
+                <h3>안녕하세요</h3>
+                <h3 id="testInfo"></h3>
+                <h3>반갑습니다</h3>
+                <!--<child-button @child-clicked="handleChildClick" />-->
+                <my-hello>
+
+                    <!--<button @click="sendEvent">자식 버튼</button>-->
+
+                </my-hello>
                 <li v-for="skill in skillList">{{ skill }}</li>
 
                 <li v-for="fruits in fruits">{{ fruits.name }}/{{ fruits.color }}/{{ fruits.taste }}
+                    <span v-if="fruits.name === '사과'">사과</span>
+                    <span v-if="fruits.name === '사과'">사과</span>
+                    <span v-if="fruits.name === '사과'">사과</span>
                     <span v-if="fruits.name === '사과'">사과</span>
                 </li>
 
@@ -90,6 +128,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/templatemo-script.js"></script>
 <script src="js/news.js"></script>
+<script src="js/common.js"></script>
 
 </body>
 </html>
