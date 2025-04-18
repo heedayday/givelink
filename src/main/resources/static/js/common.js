@@ -1,11 +1,6 @@
 Vue.component('my-hello', {
-    template: '<p>안녕하세요, 자식Vue 컴포넌트입니다!</p>',
-    //props: ['message'],  // name이라는 prop을 부모로부터 받는다
-    methods: {
-        sendEvent() {
-            //this.$emit('child-clicked', '이건 자식에서 보낸 메시지');
-        }
-    }
+    props: ['messageList'],
+    template: '<p> 123123 {{ messageList }}</p>'
 });
 
 /*
