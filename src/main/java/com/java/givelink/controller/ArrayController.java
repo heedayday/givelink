@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -21,8 +22,13 @@ public class ArrayController {
 
     @RequestMapping("/test/testData.ajax")
     @ResponseBody
-    public String testData() {
+    public Map<String, Object> testData() {
         log.info("도착은 하는 지 확인");
-        return "";
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("ajax_code", "S");
+        map.put("testData", "성공했습니다.");
+
+        return map;
     }
 }
