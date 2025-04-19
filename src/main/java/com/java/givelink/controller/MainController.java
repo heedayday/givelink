@@ -11,9 +11,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
 import java.util.List;
@@ -65,6 +66,17 @@ public class MainController {
         return "news"; // templates/post.html 파일 보여줌
     }
 
+
+
+    @RequestMapping("/v-model")
+    public String vModel(HttpServletRequest request) {
+        String name = StringUtils.defaultString(request.getParameter("name"));   //StringUtils.defaultString 쓰는 이유가 뭐야?
+        log.info("name = {}", name);
+
+        return "basicVue/v-model";
+    }
+
+
     @GetMapping("/community")
     public String community(Model model) {
         model.addAttribute("name", "Givelink");
@@ -74,10 +86,5 @@ public class MainController {
 
 
 
-/*    @GetMapping("/contact")
-    public String contact(Model model) {
-        model.addAttribute("name", "Givelink");
-        return "contact"; // templates/contact.html 파일 보여줌
-    }*/
 
 }
