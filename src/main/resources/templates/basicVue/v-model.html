@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GiveLink</title>
+	<link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-xtra-blog.css" rel="stylesheet">
+    <style>
+        p {
+            text-align: left;
+            color: #16181b;
+        }
+        .container-fluid {
+            margin-left: 500px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        console.log("script src=");
+    </script>
+
+	<header class="tm-header" id="tm-header">
+        <div class="tm-header-wrapper">
+            <div th:replace="fragments/menu :: menu"></div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row tm-row">
+            <div id="wrap">
+                <h3>데이터 선언한 값 가져오기</h3>
+                <p> 이름: {{name}}</p>
+                <p :id="idBoolean ? idChoose : '' "> ? : 삼항연산자 활용 바인딩</p><p :id="idChoose === 'id' ? idChoose : 'false' ">아이디명 확인</p>
+
+                <br>
+                <h3>v-model은 input과 같은 경우에 값이 변경되는 경우 사용</h3>
+                <p><input v-model="title" placeholder="안녕하세요"/> <button @click="buttonClick" >버튼 {{ title === 'hello' ? '당첨' : title }} </button></p>
+                <!--{{ titleBoolean ? '당첨' : 'test' }} 이렇게 사용을 하게되면 그냥 그대로 찍힘... 사용이 안됨 은 .js 파일에 오류가 있어서 그런것이었음 -->
+
+                <br>
+                <h3>성별을 선택하세요:</h3>
+                <label>
+                    <input type="radio" value="M" v-model="gender"/>
+                    남자
+                </label>
+                <label>
+                    <input type="radio" value="F"  v-model="gender"/>
+                    여자
+                </label>
+                <p>선택된 성별: {{ gender }}</p>
+
+                <br>
+                <h3>단일 체크박스</h3>
+                <input type="checkbox" v-model="isChecked" />
+                <label>약관에 동의합니다</label>
+
+                <p>체크 여부: {{ isChecked }}</p>
+
+                <br>
+                <h3>다중 체크박스</h3>
+                <p>관심 있는 과목을 선택하세요</p>
+                <label><input type="checkbox" value="HTML" v-model="subjects" /> HTML</label>
+                <label><input type="checkbox" value="CSS" v-model="subjects" /> CSS</label>
+                <label><input type="checkbox" value="JavaScript" v-model="subjects" /> JavaScript</label>
+                <p>선택한 과목: {{ subjects.join(' ') }}</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/basicVue/vmodel.js"></script>
+<!--    <script src="js/templatemo-script.js"></script>-->
+</body>
+</html>
