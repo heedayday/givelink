@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GiveLink</title>
+  <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/templatemo-xtra-blog.css" rel="stylesheet">
+  <style>
+    p {
+      text-align: left;
+      color: #16181b;
+    }
+    .container-fluid {
+      margin-left: 500px;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  console.log("script src=");
+</script>
+
+<header class="tm-header" id="tm-header">
+  <div class="tm-header-wrapper">
+    <div th:replace="fragments/menu :: menu"></div>
+  </div>
+</header>
+<div class="container-fluid">
+  <div class="row tm-row">
+    <div id="wrap">
+      <h3>v-if 사용하는 방법</h3>
+      <p v-if="ifData === 'hello'">ifData값이 :{{ifData}}이어야만 보이는 부분</p>
+      <p v-else-if="ifData === 'helloh'">ifData값이 :{{ifData}}이어야만 보이는 부분</p>
+
+      <br>
+      <h3>v-show를 사용하는 경우</h3>
+      <input type="text" v-model="ifData" />
+      <p v-show="ifData === 'hello'">v-show</p>
+
+      <br>
+      <h3>v-bind(:)도 살짝 얹어보는 ㅋㅋㅋㅋ</h3>
+      <p :id = "ifData">id값을 v-bind로 지정을 해주었어</p>
+
+      <br>
+      <h3>v-on(@)도 살짝 맛보기</h3>
+      <button v-on:click="clickHere('Happy')">클릭</button>
+    </div>
+
+  </div>
+</div>
+</body>
+<script src="js/basicVue/vIf.js"></script>
+</html>
+
+
+
+
+

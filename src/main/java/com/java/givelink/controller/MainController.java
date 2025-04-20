@@ -3,6 +3,7 @@ package com.java.givelink.controller;
 import com.java.givelink.dto.PostDto;
 import com.java.givelink.service.MainService;
 import com.java.givelink.vo.TestInfoVO;
+import com.java.givelink.vo.TestVO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -71,9 +73,19 @@ public class MainController {
     @RequestMapping("/v-model")
     public String vModel(HttpServletRequest request) {
         String name = StringUtils.defaultString(request.getParameter("name"));   //StringUtils.defaultString 쓰는 이유가 뭐야?
-        log.info("name = {}", name);
+        //log.info("name = {}", name);
 
         return "basicVue/v-model";
+    }
+
+    @RequestMapping("/v-if")
+    public String vIf(Model model, HttpServletRequest request) {
+        String name = StringUtils.defaultString(request.getParameter("name"));
+        //log.info("name = {}", name);
+
+
+
+        return "basicVue/v-if";
     }
 
 
