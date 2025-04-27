@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Controller
 @RequiredArgsConstructor
@@ -83,11 +85,48 @@ public class MainController {
         String name = StringUtils.defaultString(request.getParameter("name"));
         //log.info("name = {}", name);
 
+        //여기서 데이터 처리를 한다고 생각하고 해보자
+        //1. 기본 file명 리스트를 내가 원하는 조건에 맞게 변경해서 다시 리스트로 반환
 
+        List<String> fileNames = new ArrayList<>();
+        fileNames.add("helloworld");
+        fileNames.add("hell oWorld2.txt");
+        fileNames.add("hellowo rld3.txt");
+        fileNames.add("helloWrld4.pdf");
+        fileNames.add(333+"");
+        //fileNames.add("hellowOrld6.txt");
+
+        List<String> filterFileNames = new ArrayList<>();
+        String content =".txt";
+        String Generate ="text";
+        String filterName = "";
+
+        String text = "text".equals(Generate) ? "true" : "false";
+        log.info("text = {}", text);
+
+        for (String f : fileNames) {
+            if (f.contains(content)) {
+                filterName = f.replaceAll(" ", "").toLowerCase();
+                if (filterName.contains("333".toLowerCase())) {
+                    filterFileNames.add(filterName);
+                }
+            }
+        }
+        log.info("filterFileNames = {}", filterFileNames);
+
+        log.info(fileNameMaker(filterFileNames, content).toString());
 
         return "basicVue/v-if";
     }
 
+
+    private  List<String> fileNameMaker(List<String> fileNames, String content){
+
+        Stream<String> name =fileNames.stream().filter(s -> s.contains(content))
+                .filter(s -> s.replaceAll(" ","")
+                .toLowerCase().contains("333"));
+        return name.collect(Collectors.toList());
+    }
 
     @GetMapping("/community")
     public String community(Model model) {
