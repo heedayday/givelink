@@ -119,6 +119,12 @@ public class MainController {
         return "basicVue/v-if";
     }
 
+    @RequestMapping(value="/html/htmlStandard")
+    public String htmlStandard(Model model) {
+
+        return "html/standard";
+    }
+
 
     private  List<String> fileNameMaker(List<String> fileNames, String content){
 
