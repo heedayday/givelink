@@ -16,7 +16,7 @@
 > #### 고려중인 사항
 > 어떻게 서비스를 확장시킬 수 있을 지 기획중
 
-* 2025년 4월 개발 일시 중단 JPA 대신에 현업에서 사용하는 MyBatis 심화학습 진행중 추천 api 활용 사이트(Spring Boot, JPA, Thymeleaf)
+* 2025년 4월 개발 일시 중단 JPA 대신에 현업에서 사용하는 JSP, MyBatis 심화학습 진행중 추천 api 활용 사이트(Spring Boot, JPA, Thymeleaf)
 <br>- 검색 기능을 중심으로 한 링크 추천 사이트
 <br>- Spring Boot Framework & Thymeleaf & html & css & Bootstrap & JavaScript 구성
 <br>- Spring Initializr를 사용하여 프로젝트 생성(Maven, Spring Web, Lombok, Spring Data JPA, MySql, Thymeleaf)
